@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>hu.nooon</groupId>
+    <artifactId>dobido</artifactId>
+    <version>${project.parent.version}</version>
+    <packaging>war</packaging>
+
+    <name>MusicSite</name>
+
+    <dependencies>
+
+        <!-- JavaScript client-only library-k "provided" scope-ban vannak -->
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt.inject</groupId>
+            <artifactId>gin</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+
+
+
+        <!-- Server-side dependenciak, amit kliens oldalon is hasznalhatunk, megfelelo "inherit" hasznalattal -->
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <version>${gwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>${gwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- 2011.05.14.: GWT 2.3 + Maven plugin 2.2 bug, workaround: -->
+        <!-- <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+            <scope>provided</scope>
+        </dependency>-->
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+            <classifier>sources</classifier>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>dobido</finalName>
+
+        <plugins>
+
+            <!-- WAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <warSourceDirectory>${basedir}/src/webapp</warSourceDirectory>
+                    <webXml>${project.basedir}/src/webapp/WEB-INF/web.xml</webXml>
+                </configuration>
+            </plugin>
+
+            <!-- GWT compiler hivasa -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwt.plugin.version}</version>
+                <configuration>
+                    <module>hu.nooon.dobido.Dobido</module>
+                    <disableCastChecking>true</disableCastChecking>
+                    <disableClassMetadata>true</disableClassMetadata>
+                    <extraJvmArgs>-Xmx512M -Xss1024k -Dgwt.nowarn.legacy.tools</extraJvmArgs>
+                    <runTarget>dobido/Dobido.html</runTarget>
+                    <draftCompile>true</draftCompile>
+                    <localWorkers>1</localWorkers>
+                </configuration>
+                <!-- bekotes a maven build lifecycle-be -->
+                <executions>
+                    <execution>
+                        <id>compile-gwt</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gwt.version>2.3.0</gwt.version>
+        <gwt.plugin.version>2.3.0</gwt.plugin.version>
+    </properties>
+</project>

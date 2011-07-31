@@ -1,0 +1,13 @@
+.loading {
+	width: 120px;
+	height: 20px;
+	padding: 5px;
+	background-color: #3988c0;
+	border: 1px solid #ecede8;
+	text-align: center;
+}
+
+.label {
+	font: normal 14px Verdana, Arial, Helvetica, sans-serif;
+	color: #ecede8;
+}

@@ -1,0 +1,34 @@
+body {
+	background-color: #ecede8;
+	font: normal 12px Verdana, Arial, Helvetica, sans-serif;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+}
+
+.menuGallery {
+	width: 400px;
+	height: 400px;
+}
+
+
+.menuBio {
+	background-color: yellow;
+	width: 100px;
+	height: 100px;
+}
+
+
+.menuMedia {
+	background-color: red;
+	width: 100px;
+	height: 100px;
+}
+
+
+.menuNews {
+	background-color: blue;
+	width: 100px;
+	height: 100px;
+}
+

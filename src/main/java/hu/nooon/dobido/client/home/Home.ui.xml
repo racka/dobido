@@ -1,0 +1,19 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <ui:style src="Home.css"/>
+    <ui:with field='res' type='hu.nooon.dobido.client.resource.DobidoClientBundle'/>
+
+
+    <g:AbsolutePanel ui:field="application">
+
+        <g:Image ui:field="logoImage" resource='{res.logo}'/>
+        <g:Image ui:field="menuImage" resource='{res.menu}'/>
+        <g:Image ui:field="productsImage" resource='{res.products}'/>
+
+
+    </g:AbsolutePanel>
+
+
+</ui:UiBinder>
