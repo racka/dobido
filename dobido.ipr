@@ -187,92 +187,48 @@
     <mapping directory="" vcs="" />
   </component>
   <component name="libraryTable">
-    <library name="Maven: aopalliance:aopalliance:1.0">
+    <library name="Maven: com.google.gwt:gwt-dev:2.4.0">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.4.0/gwt-dev-2.4.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.4.0/gwt-dev-2.4.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.4.0/gwt-dev-2.4.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.google.gwt.inject:gin:1.5.0">
+    <library name="Maven: com.google.gwt:gwt-servlet:2.4.0">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/inject/gin/1.5.0/gin-1.5.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-servlet/2.4.0/gwt-servlet-2.4.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/inject/gin/1.5.0/gin-1.5.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-servlet/2.4.0/gwt-servlet-2.4.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/inject/gin/1.5.0/gin-1.5.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-servlet/2.4.0/gwt-servlet-2.4.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.google.gwt:gwt-dev:2.3.0">
+    <library name="Maven: com.google.gwt:gwt-user:2.4.0">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.3.0/gwt-dev-2.3.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-user/2.4.0/gwt-user-2.4.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.3.0/gwt-dev-2.3.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-user/2.4.0/gwt-user-2.4.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.3.0/gwt-dev-2.3.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-user/2.4.0/gwt-user-2.4.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.google.gwt:gwt-servlet:2.3.0">
+    <library name="Maven: javax.validation:validation-api:1.0.0.GA">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-servlet/2.3.0/gwt-servlet-2.3.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-servlet/2.3.0/gwt-servlet-2.3.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-servlet/2.3.0/gwt-servlet-2.3.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.google.gwt:gwt-user:2.3.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-user/2.3.0/gwt-user-2.3.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-user/2.3.0/gwt-user-2.3.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-user/2.3.0/gwt-user-2.3.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.google.inject.extensions:guice-assistedinject:3.0-rc2">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/inject/extensions/guice-assistedinject/3.0-rc2/guice-assistedinject-3.0-rc2.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/inject/extensions/guice-assistedinject/3.0-rc2/guice-assistedinject-3.0-rc2-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/inject/extensions/guice-assistedinject/3.0-rc2/guice-assistedinject-3.0-rc2-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.google.inject:guice:3.0-rc2">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/inject/guice/3.0-rc2/guice-3.0-rc2.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/inject/guice/3.0-rc2/guice-3.0-rc2-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/google/inject/guice/3.0-rc2/guice-3.0-rc2-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: javax.inject:javax.inject:1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/inject/javax.inject/1/javax.inject-1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/inject/javax.inject/1/javax.inject-1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/inject/javax.inject/1/javax.inject-1-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: javax.validation:validation-api:sources:1.0.0.GA">
@@ -284,6 +240,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: raphael4gwt:raphael4gwt:1.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/src/webapp/lib/rapahel4gwt-0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/raphael4gwt/raphael4gwt/1.0/raphael4gwt-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/raphael4gwt/raphael4gwt/1.0/raphael4gwt-1.0-sources.jar!/" />
       </SOURCES>
     </library>
   </component>

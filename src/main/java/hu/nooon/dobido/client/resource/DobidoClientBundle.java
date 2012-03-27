@@ -8,17 +8,4 @@ public interface DobidoClientBundle extends ClientBundle {
 
     public static final DobidoClientBundle INSTANCE =  GWT.create(DobidoClientBundle.class);
 
-    @Source("hu/nooon/dobido/public/stylesheets/constants.css")
-    MusicSiteStyleSheet constantsCSS();
-
-    @Source("hu/nooon/dobido/public/images/dobido_logo.png")
-    ImageResource logo();
-
-    @Source("hu/nooon/dobido/public/images/dobido_products.png")
-    ImageResource products();
-
-    @Source("hu/nooon/dobido/public/images/dobido_menu.png")
-    ImageResource menu();
-
-
 }

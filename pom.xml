@@ -13,22 +13,13 @@
 
     <dependencies>
 
-        <!-- JavaScript client-only library-k "provided" scope-ban vannak -->
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
             <version>${gwt.version}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.google.gwt.inject</groupId>
-            <artifactId>gin</artifactId>
-            <version>1.5.0</version>
-        </dependency>
 
-
-
-        <!-- Server-side dependenciak, amit kliens oldalon is hasznalhatunk, megfelelo "inherit" hasznalattal -->
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-servlet</artifactId>
@@ -43,21 +34,14 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- 2011.05.14.: GWT 2.3 + Maven plugin 2.2 bug, workaround: -->
-        <!-- <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>1.0.0.GA</version>
-            <scope>provided</scope>
-        </dependency>-->
-
         <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>1.0.0.GA</version>
-            <classifier>sources</classifier>
-            <scope>provided</scope>
+            <groupId>raphael4gwt</groupId>
+            <artifactId>raphael4gwt</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/webapp/lib/rapahel4gwt-0.2.jar</systemPath>
         </dependency>
+
 
     </dependencies>
 
@@ -109,7 +93,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <gwt.version>2.3.0</gwt.version>
-        <gwt.plugin.version>2.3.0</gwt.plugin.version>
+        <gwt.version>2.4.0</gwt.version>
+        <gwt.plugin.version>2.4.0</gwt.plugin.version>
     </properties>
 </project>
