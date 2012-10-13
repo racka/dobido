@@ -82,7 +82,7 @@
                     <disableCastChecking>true</disableCastChecking>
                     <disableClassMetadata>true</disableClassMetadata>
                     <extraJvmArgs>-Xmx512M -Xss1024k -Dgwt.nowarn.legacy.tools</extraJvmArgs>
-                    <runTarget>dobido/dobido.html</runTarget>
+                    <runTarget>dobido/Dobido.html</runTarget>
                     <!--<draftCompile>true</draftCompile>-->
                     <localWorkers>1</localWorkers>
                 </configuration>
