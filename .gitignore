@@ -1,5 +1,14 @@
-target
-*.iml
+target/*
+.idea/*
 *.ipr
+*.iml
 *.iws
-.idea
+*/*.ipr
+*/*.iml
+*/*.iws
+*/stub/*
+.project
+.classpath
+*/.settings/*
+.settings/*
+**/.DS_Store

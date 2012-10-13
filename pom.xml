@@ -6,10 +6,10 @@
 
     <groupId>hu.nooon</groupId>
     <artifactId>dobido</artifactId>
-    <version>${project.parent.version}</version>
+    <version>0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>MusicSite</name>
+    <name>Dobido</name>
 
     <dependencies>
 
@@ -37,11 +37,24 @@
         <dependency>
             <groupId>raphael4gwt</groupId>
             <artifactId>raphael4gwt</artifactId>
-            <version>1.0</version>
+            <version>0.36</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/src/webapp/lib/rapahel4gwt-0.2.jar</systemPath>
+            <systemPath>${project.basedir}/src/webapp/lib/raphael4gwt-0.36.jar</systemPath>
         </dependency>
 
+        <dependency>
+            <groupId>gwt-voices</groupId>
+            <artifactId>gwt-voices</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/webapp/lib/gwt-voices-2.1.8.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20090211</version>
+        </dependency>
 
     </dependencies>
 
@@ -50,17 +63,16 @@
 
         <plugins>
 
-            <!-- WAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
                 <configuration>
                     <warSourceDirectory>${basedir}/src/webapp</warSourceDirectory>
                     <webXml>${project.basedir}/src/webapp/WEB-INF/web.xml</webXml>
                 </configuration>
             </plugin>
 
-            <!-- GWT compiler hivasa -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
@@ -70,11 +82,10 @@
                     <disableCastChecking>true</disableCastChecking>
                     <disableClassMetadata>true</disableClassMetadata>
                     <extraJvmArgs>-Xmx512M -Xss1024k -Dgwt.nowarn.legacy.tools</extraJvmArgs>
-                    <runTarget>dobido/Dobido.html</runTarget>
-                    <draftCompile>true</draftCompile>
+                    <runTarget>dobido/dobido.html</runTarget>
+                    <!--<draftCompile>true</draftCompile>-->
                     <localWorkers>1</localWorkers>
                 </configuration>
-                <!-- bekotes a maven build lifecycle-be -->
                 <executions>
                     <execution>
                         <id>compile-gwt</id>
@@ -93,7 +104,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <gwt.version>2.4.0</gwt.version>
-        <gwt.plugin.version>2.4.0</gwt.plugin.version>
+        <gwt.version>2.5.0-rc1</gwt.version>
+        <gwt.plugin.version>2.5.0-rc1</gwt.plugin.version>
     </properties>
 </project>
