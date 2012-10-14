@@ -1,77 +1,49 @@
 package hu.nooon.dobido.client.widgets;
 
-import org.sgx.raphael4gwt.raphael.*;
+import org.sgx.raphael4gwt.raphael.Raphael;
+import org.sgx.raphael4gwt.raphael.Shape;
 import org.sgx.raphael4gwt.raphael.base.Attrs;
-import org.sgx.raphael4gwt.raphael.base.Point;
 import org.sgx.raphael4gwt.raphael.event.Callback;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class CustomGrid implements CustomLayer {
 
 
-    private int gridCols, gridRows;
-    private Map<Integer, Shape> shapesOnGrid = new HashMap<Integer, Shape>();
-    private final List<Point> coords = new ArrayList<Point>();
-    private int xPadding = 0, yPadding = 0;
+    protected int x, y;
+    protected int gridCols;
+    protected Map<Integer, Shape> shapesOnGrid = new HashMap<Integer, Shape>();
+    protected int cellWidth, cellHeight;
+    protected int xPadding = 0, yPadding = 0;
 
-    public CustomGrid(int x, int y, int rownum, int colnum, int cellWidth, int cellHeight) {
-        this.gridCols = colnum;
-        this.gridRows = rownum;
 
-        for (int j = 0; j < rownum; j++) {
-            for (int i = 0; i < colnum; i++) {
-                coords.add(Raphael.createPoint(x + i * cellWidth, y + j * cellHeight));
-            }
-        }
-    }
-
-    public CustomGrid(int x, int y, int rownum, int colnum, int cellWidth, int cellHeight, int xPadding, int yPadding) {
-        this(x, y, rownum, colnum, cellWidth, cellHeight);
+    public CustomGrid(int x, int y, int gridCols, int cellWidth, int cellHeight, int xPadding, int yPadding) {
+        this.x = x;
+        this.y = y;
+        this.gridCols = gridCols;
+        this.cellWidth = cellWidth;
+        this.cellHeight = cellHeight;
         this.xPadding = xPadding;
         this.yPadding = yPadding;
     }
 
-    public void putShapesToGrid(int x, int y, int cols, Set shapes) {
-
-        if (shapes.size() == 0 || cols == 0 || shapes.size() % cols != 0) {
-            return;
-        }
-        int actualX = x, actualY = y - 1;
-
-        for (int i = 0; i < shapes.size(); i++) {
-            if (i % cols == 0) {
-                actualX = x;
-                actualY++;
-            }
-
-            putShapeToGrid(actualX, actualY, shapes.item(i));
-
-            actualX++;
-        }
-    }
-
     public Shape putShapeToGrid(int x, int y, Shape shape) {
 
-        if (x >= gridCols || x < 0 || y >= gridRows || y < 0) {
+        if (x >= gridCols || x < 0 || y < 0) {
             return null;
         }
 
         int linearCoord = y * gridCols + x;
-        Point startCoord = coords.get(linearCoord);
         Shape obsoleteShape = shapesOnGrid.get(linearCoord);
-        Shape actualShape = shape.attr(Attrs.create().x(startCoord.getX() + xPadding).y(startCoord.getY() + yPadding));
+        Shape actualShape = shape.attr(getLinearCoord(x, y));
         shapesOnGrid.put(linearCoord, actualShape);
         showNewShape(obsoleteShape, actualShape);
 
         return actualShape;
     }
 
-
-    private void showNewShape(final Shape obsoleteShape, final Shape actualShape) {
+    protected void showNewShape(final Shape obsoleteShape, final Shape actualShape) {
         if (obsoleteShape != null) {
             obsoleteShape.stop();
             obsoleteShape.animate(
@@ -98,7 +70,7 @@ public class CustomGrid implements CustomLayer {
     @Override
     public CustomGrid clear() {
 
-        for (int i = 0; i < gridCols * gridRows; i++) {
+        for (int i : shapesOnGrid.keySet()) {
             removeShape(i, false);
         }
         return this;
@@ -143,4 +115,10 @@ public class CustomGrid implements CustomLayer {
             shape.stop().toBack().hide();
         }
     }
+
+
+    private Attrs getLinearCoord(int xCoord, int yCoord) {
+        return Attrs.create().x(x + xCoord * (cellWidth + xPadding)).y(y + yCoord * (cellHeight + yPadding));
+    }
+
 }
