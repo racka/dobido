@@ -10,7 +10,7 @@ public class MenuGrid extends CustomGrid {
         super(x, y, gridCols, cellWidth, cellHeight, xPadding, yPadding);
     }
 
-    public Shape putJuciMenuItemToGrid(Paper paper, int xCoord, int yCoord, JuciMenuItem menuItem) {
+    public Shape putJuciMenuItemToGrid(Paper paper, int xCoord, int yCoord, PicText menuItem) {
 
         if (xCoord >= gridCols || xCoord < 0 || yCoord < 0) {
             return null;

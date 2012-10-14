@@ -4,7 +4,7 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Style;
-import hu.nooon.dobido.client.widgets.JuciMenuItem;
+import hu.nooon.dobido.client.widgets.PicText;
 import hu.nooon.dobido.client.widgets.MenuGrid;
 import org.sgx.raphael4gwt.raphael.Paper;
 import org.sgx.raphael4gwt.raphael.Raphael;
@@ -146,7 +146,8 @@ public class SiteEntryPoint implements EntryPoint {
 
         Shape tokimndegy =
         clientGrid.putJuciMenuItemToGrid(paper, 0, 0,
-                new JuciMenuItem(menuItemWidth, menuItemHeight, 30, "Valami szoveg", Attrs.create().strokeWidth(0).fill("blue"), font3));
+                new PicText(menuItemWidth, menuItemHeight, 30, "Valami szoveg", Attrs.create().strokeWidth(0).fill("blue"), font3));
+
 
 
 
