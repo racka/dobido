@@ -10,13 +10,24 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt:gwt-user:2.5.0-rc2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.validation:validation-api:sources:1.0.0.GA" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20090211" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.google.gwt:gwt-servlet:2.5.0-rc2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.google.gwt:gwt-dev:2.5.0-rc2" level="project" />
     <orderEntry type="library" name="Maven: raphael4gwt:raphael4gwt:0.36" level="project" />
     <orderEntry type="library" name="Maven: gwt-voices:gwt-voices:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-validator:4.3.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.1.0.CR2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.web.bindery:requestfactory-apt:2.5.0-rc2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.appengine:appengine-api-1.0-sdk:1.7.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.datanucleus:datanucleus-api-jdo:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.datanucleus:datanucleus-api-jpa:3.0.6" level="project" />
+    <orderEntry type="library" name="Maven: com.google.appengine.orm:datanucleus-appengine:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.datanucleus:datanucleus-core:3.0.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.geronimo.specs:geronimo-jpa_2.0_spec:1.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.jdo:jdo-api:3.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.transaction:transaction-api:1.1" level="project" />
   </component>
 </module>
 
