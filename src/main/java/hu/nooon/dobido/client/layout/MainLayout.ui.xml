@@ -1,0 +1,53 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:me='urn:import:hu.nooon.dobido.client.customwidget'>
+
+
+    <ui:style>
+        .eastPanel {
+        background-color: #EEF;
+        }
+        .westPanel {
+        background-color: #EEE;
+        }
+        .northPanel {
+        background-color: #EEB;
+        }
+        .southPanel {
+        background-color: #EEC;
+        }
+        .centerPanel {
+        background-color: #EEA;
+        border:2px solid;
+        border-radius:25px;
+        }
+    </ui:style>
+    <g:DockLayoutPanel unit='PC'>
+        <g:north size='5'>
+            <g:FlowPanel styleName="{style.northPanel}">
+                <g:Label>This is the NORTH panel</g:Label>
+            </g:FlowPanel>
+        </g:north>
+        <g:west size='10'>
+            <g:FlowPanel styleName="{style.westPanel}">
+                <g:Label>This is the WEST panel</g:Label>
+            </g:FlowPanel>
+        </g:west>
+        <g:center>
+            <g:FlowPanel styleName="{style.centerPanel}">
+                <g:Label>This is the CENTER panel</g:Label>
+                <g:FlexTable ui:field='flexTable'/>
+            </g:FlowPanel>
+        </g:center>
+        <g:east size='20'>
+            <g:FlowPanel styleName="{style.eastPanel}">
+                <g:Label>This is the EAST panel</g:Label>
+            </g:FlowPanel>
+        </g:east>
+        <g:south size="10">
+            <g:FlowPanel styleName="{style.southPanel}">
+                <g:Label>This is the SOUTH panel</g:Label>
+            </g:FlowPanel>
+        </g:south>
+    </g:DockLayoutPanel>
+</ui:UiBinder>

@@ -2,10 +2,8 @@
 
 
     <inherits name="com.google.gwt.user.User"/>
-    <inherits name="org.sgx.raphael4gwt.Raphael4Gwt" />
-    <inherits name='com.allen_sauer.gwt.voices.gwt-voices'/>
-
     <inherits name='com.google.web.bindery.requestfactory.RequestFactory'/>
+    <set-configuration-property name="UiBinder.useSafeHtmlTemplates" value="true"/>
 
     <set-property name="user.agent" value="safari"/>
 

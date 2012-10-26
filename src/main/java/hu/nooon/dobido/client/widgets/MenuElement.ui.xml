@@ -1,0 +1,21 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+
+    <ui:style>
+        .menuElement {
+        background-color: #EEC;
+        border:2px solid;
+        border-radius:25px;
+        width: 200px;
+        height: 200px;
+        }
+    </ui:style>
+
+    <g:HTMLPanel styleName="{style.menuElement}">
+        <g:Label ui:field='xLabel'/>
+        <g:Label ui:field='yLabel'/>
+    </g:HTMLPanel>
+
+
+</ui:UiBinder>

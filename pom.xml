@@ -11,6 +11,18 @@
 
     <name>Dobido</name>
 
+    <repositories>
+        <repository>
+            <id>google-api-services</id>
+            <url>http://mavenrepo.google-api-java-client.googlecode.com/hg</url>
+        </repository>
+        <repository>
+            <id>google-releases</id>
+            <name>Google Releases</name>
+            <url>https://oss.sonatype.org/content/repositories/google-releases</url>
+        </repository>
+    </repositories>
+
     <dependencies>
 
         <dependency>
@@ -34,27 +46,11 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>raphael4gwt</groupId>
-            <artifactId>raphael4gwt</artifactId>
-            <version>0.36</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/webapp/lib/raphael4gwt-0.36.jar</systemPath>
-        </dependency>
-
-        <dependency>
-            <groupId>gwt-voices</groupId>
-            <artifactId>gwt-voices</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/webapp/lib/gwt-voices-2.1.8.jar</systemPath>
-        </dependency>
-
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20090211</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.json</groupId>-->
+            <!--<artifactId>json</artifactId>-->
+            <!--<version>20090211</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -62,11 +58,6 @@
             <version>4.3.0.Final</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>com.google.web.bindery</groupId>-->
-            <!--<artifactId>requestfactory-server</artifactId>-->
-            <!--<version>2.5.0-rc2</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.google.web.bindery</groupId>
             <artifactId>requestfactory-apt</artifactId>
@@ -111,6 +102,41 @@
             <groupId>javax.jdo</groupId>
             <artifactId>jdo-api</artifactId>
             <version>3.0</version>
+        </dependency>
+
+
+
+        <!-- Google API -->
+
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-drive</artifactId>
+            <version>v2-rev13-1.8.0-beta</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-oauth2</artifactId>
+            <version>v2-rev15-1.8.0-beta</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client</artifactId>
+            <version>1.11.0-beta</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client-appengine</artifactId>
+            <version>1.11.0-beta</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>13.0.1</version>
         </dependency>
 
     </dependencies>
