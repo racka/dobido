@@ -38,44 +38,7 @@ public class MenuElement extends Composite {
     void handleClick(ClickEvent e) {
 
         String URL = Window.Location.getProtocol() + "//" + Window.Location.getHost() + "/dobido/googledrive";
-//        xLabel.setText(URL);
-        panel.add(new HTML("<img src=\"" + URL + "\" />"));
-
-
-//        RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.GET, URL);
-//        requestBuilder.setCallback(new RequestCallback() {
-//            @Override
-//            public void onResponseReceived(Request request, Response response) {
-//
-//                panel.add(new HTML("<img src=\"" + response.getText() + "\" />"));
-//
-//            }
-//
-//            @Override
-//            public void onError(Request request, Throwable exception) {
-//                //To change body of implemented methods use File | Settings | File Templates.
-//            }
-//        });
-//
-//        try {
-//            requestBuilder.send();
-//        } catch (RequestException e1) {
-//            e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-//        }
-
-
-//
-//        drive.listFiles("", new AsyncCallback<String>() {
-//            @Override
-//            public void onFailure(Throwable caught) {
-//            }
-//
-//            @Override
-//            public void onSuccess(String result) {
-//                xLabel.setText(result);
-//            }
-//        });
-
+        panel.add(new Image(URL));
     }
 
 }

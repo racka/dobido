@@ -11,7 +11,7 @@
 
     <servlet>
         <servlet-name>driveServletImpl</servlet-name>
-        <servlet-class>hu.nooon.dobido.server.rpc.DriveServletImpl</servlet-class>
+        <servlet-class>hu.nooon.dobido.server.rpc.GoogleDriveServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

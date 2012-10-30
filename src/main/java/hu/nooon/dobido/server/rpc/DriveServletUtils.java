@@ -12,6 +12,7 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.api.services.drive.model.FileList;
+import com.google.gwt.user.server.Base64Utils;
 
 import javax.servlet.http.HttpServlet;
 import java.io.IOException;
@@ -68,7 +69,7 @@ public abstract class DriveServletUtils extends HttpServlet {
      * @param service Drive API service instance.
      * @return List of File resources.
      */
-    protected static List<File> listFiles(Drive service) throws IOException {
+    protected List<File> listFiles(Drive service) throws IOException {
         List<File> result = new ArrayList<File>();
 
         Drive.Files.List request = service.files().list();
@@ -99,7 +100,7 @@ public abstract class DriveServletUtils extends HttpServlet {
      * @return InputStream containing the file's content if successful,
      *         {@code null} otherwise.
      */
-    protected static InputStream downloadFile(Drive service, File file) {
+    protected InputStream downloadFile(Drive service, File file) {
         if (file.getDownloadUrl() != null && file.getDownloadUrl().length() > 0) {
             try {
                 HttpResponse resp =
@@ -116,5 +117,13 @@ public abstract class DriveServletUtils extends HttpServlet {
             return null;
         }
     }
+
+
+    protected String getImageData(byte[] imageByteArray){
+        String base64 = Base64Utils.toBase64(imageByteArray);
+        base64 = "data:image/png;base64,"+base64;
+        return base64;
+    }
+
 
 }
