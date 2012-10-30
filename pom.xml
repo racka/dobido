@@ -26,6 +26,13 @@
     <dependencies>
 
         <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
             <version>${gwt.version}</version>
@@ -256,6 +263,7 @@
         <gwt.version>2.5.0-rc2</gwt.version>
         <gwt.plugin.version>2.5.0-rc1</gwt.plugin.version>
         <gae.home>/Users/racka/Development/appengine-java-sdk-1.7.2.1</gae.home>
+        <gae.wait>true</gae.wait>
         <gae.version>1.7.2.1</gae.version>
         <gae.runtime.version>1.7.2</gae.runtime.version>
     </properties>

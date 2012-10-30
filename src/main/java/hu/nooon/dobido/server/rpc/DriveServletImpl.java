@@ -1,100 +1,83 @@
 package hu.nooon.dobido.server.rpc;
 
-import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
-import com.google.api.services.drive.model.FileList;
-import hu.nooon.dobido.client.rpc.DriveServlet;
-import hu.nooon.dobido.server.drive.CredentialMediator;
-import hu.nooon.dobido.server.drive.DrEditServlet;
+import com.google.gwt.user.server.Base64Utils;
+import org.apache.commons.io.IOUtils;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.InputStream;
+import java.security.GeneralSecurityException;
 import java.util.List;
 
-public class DriveServletImpl extends DrEditServlet implements DriveServlet {
+public class DriveServletImpl extends DriveServletUtils {
 
 
     @Override
-    public String listFiles(String user) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
-            HttpServletRequest request = getThreadLocalRequest();
-            request.getSession().setAttribute(CredentialMediator.USER_ID_KEY, "74120609504.apps.googleusercontent.com");
-            request.getSession().setAttribute(CredentialMediator.EMAIL_KEY, "74120609504@developer.gserviceaccount.com");
+
+            Drive service = getDriveService();
+            List<File> files = listFiles(service);
+
+            for (File file : files) {
+
+                if (file.getTitle().equals("facebook.png")) {
+
+                    resp.setContentType("image/png");
+                    resp.setContentLength(file.getFileSize().intValue());
+
+                    BufferedInputStream input = null;
+                    BufferedOutputStream output = null;
+
+                    try {
+//                        String imageData = getImageData(IOUtils.toByteArray(downloadFile(service, file)));
+//                        input = new BufferedInputStream(IOUtils.toInputStream(imageData));
+
+                        input = new BufferedInputStream(downloadFile(service, file));
+                        output = new BufferedOutputStream(resp.getOutputStream());
+
+                        byte[] buffer = new byte[8192];
+                        for (int length = 0; (length = input.read(buffer)) > 0; ) {
+                            output.write(buffer, 0, length);
+                        }
+                    } finally {
+                        if (output != null) try {
+                            output.close();
+                        } catch (IOException ignore) {
+                        }
+                        if (input != null) try {
+                            input.close();
+                        } catch (IOException ignore) {
+                        }
+                    }
+
+                }
 
 
-            Drive drive = getDriveService(getThreadLocalRequest(), getThreadLocalResponse());
-            return getFileNames(drive);
-
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-
-        return "...";
-    }
-
-    /**
-     * Build and return a Drive service object based on given request parameters.
-     *
-     * @param req Request to use to fetch code parameter or accessToken session
-     *            attribute.
-     * @param resp HTTP response to use for redirecting for authorization if
-     *             needed.
-     * @return Drive service object that is ready to make requests, or null if
-     *         there was a problem.
-     */
-    private Drive getDriveService(HttpServletRequest req,
-                                  HttpServletResponse resp) {
-        Credential credentials = getCredential(req, resp);
-
-        return new Drive.Builder(TRANSPORT, JSON_FACTORY, credentials).build();
-    }
-
-
-    private String getFileNames(Drive service) throws IOException {
-
-        List<File> files = retrieveAllFiles(service);
-        if (files.isEmpty()) {
-            return "No info";
-        }
-
-        StringBuilder result = new StringBuilder("");
-
-        for (File file : files) {
-            result.append(file.getOriginalFilename());
-        }
-
-        return result.toString();
-    }
-
-    /**
-     * Retrieve a list of File resources.
-     *
-     * @param service Drive API service instance.
-     * @return List of File resources.
-     */
-    private static List<File> retrieveAllFiles(Drive service) throws IOException {
-        List<File> result = new ArrayList<File>();
-        Drive.Files.List request = service.files().list();
-
-        do {
-            try {
-                FileList files = request.execute();
-
-                result.addAll(files.getItems());
-                request.setPageToken(files.getNextPageToken());
-            } catch (IOException e) {
-                System.out.println("An error occurred: " + e);
-                request.setPageToken(null);
             }
-        } while (request.getPageToken() != null &&
-                request.getPageToken().length() > 0);
 
-        return result;
+
+        } catch (GeneralSecurityException e) {
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
+
     }
+
+
+    public String getImageData(byte[] imageByteArray){
+        String base64 = Base64Utils.toBase64(imageByteArray);
+        base64 = "data:image/png;base64,"+base64;
+        return base64;
+    }
+
 
 
 }

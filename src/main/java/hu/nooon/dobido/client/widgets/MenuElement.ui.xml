@@ -12,7 +12,7 @@
         }
     </ui:style>
 
-    <g:HTMLPanel styleName="{style.menuElement}">
+    <g:HTMLPanel ui:field='panel' styleName="{style.menuElement}">
         <g:Label ui:field='xLabel'/>
         <g:Label ui:field='yLabel'/>
     </g:HTMLPanel>
