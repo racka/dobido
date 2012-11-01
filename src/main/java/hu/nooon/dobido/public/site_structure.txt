@@ -1,0 +1,89 @@
+[{
+    "name": "Altatas",
+    "color": "green",
+
+    "ProductCategories": [
+    {
+
+        "name": "babazsak",
+        "coverImageFolder": "Babazsakok",
+        "coverImageFile": "cover.jpg",
+        "Products": [
+
+        {
+            "name": "Kiskutyas babazsak XXL",
+            "quantity": "5",
+            "inOrder": "0",
+            "imageFolder": "Babazsakok",
+            "imageFile": "kiskutyas_babazsakXXL.jpg"
+        }
+
+        ,{
+            "name": "Teknocos babazsak XS",
+            "quantity": "2",
+            "inOrder": "0",
+            "imageFolder": "Babazsakok",
+            "imageFile": "teknoc_babazsakXS.jpg"
+        }
+        ]
+
+    }
+
+    ,{
+        "name": "halozsak",
+        "coverImageFolder": "Halozsakok",
+        "coverImageFile": "cover.jpg",
+        "Products": [
+
+        {
+            "name": "Halozsak XXL",
+            "quantity": "1",
+            "inOrder": "0",
+            "imageFolder": "Halozsakok",
+            "imageFile": "halozsakXXL.jpg"
+        }
+
+        ,{
+            "name": "Halozsak L",
+            "quantity": "3",
+            "inOrder": "0",
+            "imageFolder": "Halozsakok",
+            "imageFile": "halozsakL.jpg"
+        }
+        ]
+    }]
+}
+,
+ {
+     "name": "Hordozas",
+     "color": "blue",
+
+     "ProductCategories": [
+     {
+
+         "name": "Mei-Tai",
+         "coverImageFolder": "MeiTai",
+         "coverImageFile": "cover.jpg",
+         "Products": [
+
+         {
+             "name": "Kek Mei-Tai XXL",
+             "quantity": "5",
+             "inOrder": "0",
+             "imageFolder": "MeiTai",
+             "imageFile": "kekMeiTai_XXL.jpg"
+         }
+
+         ,{
+             "name": "Teknocos babazsak XS",
+             "quantity": "2",
+             "inOrder": "0",
+             "imageFolder": "Babazsakok",
+             "imageFile": "teknoc_babazsakXS.jpg"
+         }
+         ]
+
+     }
+     ]
+ }
+]

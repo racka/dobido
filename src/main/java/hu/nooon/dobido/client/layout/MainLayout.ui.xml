@@ -4,50 +4,109 @@
 
 
     <ui:style>
-        .eastPanel {
-        background-color: #EEF;
+        .main {
+        width: 835px;
+        max-width: 835px;
+        text-align: left;
+        border:2px solid;
+        border-radius:25px;
         }
-        .westPanel {
-        background-color: #EEE;
+
+        .header {
+        height: 109px;
+        max-height: 109px;
+        border:2px solid;
+        border-radius:25px;
         }
-        .northPanel {
-        background-color: #EEB;
+
+        .middle {
+        width: 835px;
+        overflow: auto;
+        border:2px solid;
+        border-radius:25px;
         }
-        .southPanel {
-        background-color: #EEC;
+
+        .left {
+        float: left;
+        width: 166px;
+        padding: 0;
+        margin: 0;
+        padding-top: 14px;
+        border:2px solid;
+        border-radius:25px;
         }
-        .centerPanel {
-        background-color: #EEA;
+
+        .right {
+        width: 621px;
+        float: left;
+        padding-left: 19px;
+        min-height: 424px;
+        border:2px solid;
+        border-radius:25px;
+        }
+
+        .productsMenu {
+        width: 166px;
+        padding:0;
+        margin:0;
+        padding-bottom: 1px;
+        border:2px solid;
+        border-radius:25px;
+        }
+
+        .siteMenu {
+        width: 95%;
+        height: 28px;
+        padding:0;
+        margin:0;
+        padding-bottom: 1px;
+        border:2px solid;
+        border-radius:25px;
+        }
+
+        .footer {
+        height: 28px;
+        max-height: 28px;
+        background-position: bottom;
         border:2px solid;
         border-radius:25px;
         }
     </ui:style>
-    <g:DockLayoutPanel unit='PC'>
-        <g:north size='5'>
-            <g:FlowPanel styleName="{style.northPanel}">
-                <g:Label>This is the NORTH panel</g:Label>
-            </g:FlowPanel>
-        </g:north>
-        <g:west size='10'>
-            <g:FlowPanel styleName="{style.westPanel}">
-                <g:Label>This is the WEST panel</g:Label>
-            </g:FlowPanel>
-        </g:west>
-        <g:center>
-            <g:FlowPanel styleName="{style.centerPanel}">
-                <g:Label>This is the CENTER panel</g:Label>
-                <g:FlexTable ui:field='flexTable'/>
-            </g:FlowPanel>
-        </g:center>
-        <g:east size='20'>
-            <g:FlowPanel styleName="{style.eastPanel}">
-                <g:Label>This is the EAST panel</g:Label>
-            </g:FlowPanel>
-        </g:east>
-        <g:south size="10">
-            <g:FlowPanel styleName="{style.southPanel}">
-                <g:Label>This is the SOUTH panel</g:Label>
-            </g:FlowPanel>
-        </g:south>
-    </g:DockLayoutPanel>
+
+
+    <g:HorizontalPanel width="100%" height="100%">
+        <g:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+
+
+            <g:HTMLPanel styleName="{style.main}">
+                <g:HTMLPanel ui:field='header' styleName="{style.header}">
+                    <g:Label text="HEADER"/>
+                </g:HTMLPanel>
+
+                <g:HTMLPanel styleName="{style.middle}">
+
+                    <g:HTMLPanel styleName="{style.left}">
+                        <g:Label text="LEFT"/>
+                        <g:HTMLPanel ui:field='productsMenu' styleName="{style.productsMenu}">
+                            <g:Label text="PRODUCTS MENU"/>
+                        </g:HTMLPanel>
+                    </g:HTMLPanel>
+
+                    <g:HTMLPanel ui:field='clientArea' styleName="{style.right}">
+                        <g:HTMLPanel ui:field='siteMenu' styleName="{style.siteMenu}">
+                            <g:Label text="SITE MENU"/>
+                        </g:HTMLPanel>
+                    </g:HTMLPanel>
+
+                </g:HTMLPanel>
+
+                <g:HTMLPanel styleName="{style.footer}">
+                    <g:Label text="FOOTER"/>
+                </g:HTMLPanel>
+
+
+            </g:HTMLPanel>
+        </g:cell>
+    </g:HorizontalPanel>
+
 </ui:UiBinder>
